@@ -1,0 +1,58 @@
+.panel-custom-width {
+  width: 200px !important;
+  max-width: unset !important;
+}
+.notification {
+  &-title {
+    grid-area: title;
+  }
+
+  &-description {
+    grid-area: body;
+  }
+
+  &-meta {
+    text-align: right;
+    grid-area: meta;
+  }
+
+  &-footer {
+    text-transform: uppercase;
+    grid-area: footer;
+    align-self: end;
+  }
+}
+
+.button-border {
+  border: 0.6px solid
+}
+
+.hide-button {
+  opacity: 0;
+}
+
+.list-group-item:hover .hide-button {
+  opacity: 1;
+}
+
+.badge {
+  margin-right: .5em;
+}
+
+.badge-secondary {
+  background: #eee;
+}
+
+.new {
+  position: relative;
+  &:before {
+    content: '';
+    width: 4px;
+    height: 4px;
+    position: absolute;
+    left: 7px;
+    top: 20px;
+    background: var(--red);
+    border-radius: 9999px;
+  }
+}

@@ -1,0 +1,26 @@
+<mat-dialog-content>
+  <mat-label>Category</mat-label>
+  <div></div>
+  <mat-form-field appearance="fill">
+    <mat-select  [(ngModel)]="data.category">
+      <mat-option value="HotMeal">HotMeal</mat-option>
+      <mat-option value="Bakery">Bakery</mat-option>
+      <mat-option value="Fruits">Fruits</mat-option>
+      <mat-option value="Sandwich">Sandwich</mat-option>
+      <mat-option value="Soup">Soup</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <div></div>
+  <mat-label>Quantity (Number of Servings)</mat-label>
+  <div></div>
+  <mat-form-field appearance="fill">
+    <input matInput [(ngModel)]="data.quantity" />
+  </mat-form-field>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button class="mat-raised-button" style="position: relative; left: 4rem;" (click)="close()">Close</button>
+
+  <button class="mat-raised-button bg-success" style="position: relative; left: 6rem;" (click)="save()">Save</button>
+</mat-dialog-actions>
+  

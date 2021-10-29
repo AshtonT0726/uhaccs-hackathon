@@ -1,0 +1,41 @@
+<mat-dialog-content>
+  <div class="row">
+    <div class="col-md-3 mb-1">
+      <mat-label>Name</mat-label>
+    </div>
+    <div class="col-md-8 mb-1">
+      <mat-form-field appearance="fill">
+        <input matInput  placeholder="Ex. ABC Bakery" [(ngModel)]="data.name" />
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3 mb-1">
+      <mat-label>Address</mat-label>
+    </div>
+    <div class="col-md-8 mb-1">
+      <mat-form-field appearance="fill">
+        <input matInput [(ngModel)]="data.address" />
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3 mb-1">
+      <mat-label>Phone</mat-label>
+    </div>
+    <div class="col-md-8 mb-1">
+      <mat-form-field appearance="fill">
+        <input type="phone" placeholder="Ex. (555) 555-5555" matInput [(ngModel)]="data.phone" />
+      </mat-form-field>
+    </div>
+  </div>
+
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button class="mat-raised-button" style="position: relative; left: 4rem;" (click)="close()">Close</button>
+
+  <button class="mat-raised-button bg-primary" style="position: relative; left: 6rem;" (click)="save()">Save</button>
+</mat-dialog-actions>

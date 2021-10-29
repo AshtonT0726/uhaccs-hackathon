@@ -1,0 +1,89 @@
+<app-header [navbarBrandRouterLink]="['/dashboard']" [fixed]="true"
+  [navbarBrandFull]="{src: 'assets/img/brand/smartfood.png', width: 100, height: 40, alt: 'SMARTFood Logo'}"
+  [navbarBrandMinimized]="{src: 'assets/img/brand/smartfood.png', width: 120, height: 40, alt: 'SMARTFood Logo'}"
+  [sidebarToggler]="'lg'" [asideMenuToggler]="'lg'">
+  <ul class="nav navbar-nav ml-auto">
+    <!-- notifications-->
+    <li class="nav-item dropdown" dropdown placement="bottom right">
+      <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"
+        dropdownToggle (click)="false">
+        <i class="icon-bell"></i>
+        <span class="badge badge-pill badge-danger">{{numberOfMessages()}}</span>
+      </a>
+      <div class="dropdown-menu dropdown-menu-right" *dropdownMenu aria-labelledby="simple-dropdown">
+        <div class="dropdown-header text-center" *ngIf="notificationList.length > 0"><strong>Notifications</strong>
+        </div>
+
+        <div class="dropdown-header text-center" *ngIf="notificationList.length == 0"><strong>No notifications</strong>
+        </div>
+
+        <div class="divider" *ngIf="notificationList.length > 0"></div>
+        <div class="container border-left card" *ngIf="notificationList.length > 0">
+          <ng-container>
+            <ul [@listAnimation]="notificationList.length">
+              <li *ngFor="let notification of notificationList">
+                <a class="dropdown-item">{{ notification.title }}</a>
+                <div>
+                  <text>Due to inventory changes, your food delivery from</text>
+                  <text class="text-success">&nbsp;{{ notification.donor }}</text>
+                  <text>&nbsp;is changed from</text>
+                  <text class="text-primary">&nbsp;{{ notification.kitchen1 }}</text>
+                  <text>&nbsp;to</text>
+                  <text class="text-primary">&nbsp;{{ notification.kitchen2 }}.</text>
+                </div>
+                <div class="notification-meta">
+                  <span class="text-muted">{{ formatDate(notification.received) }}</span>
+                </div>
+                <div class="notification-footer">
+                  <button (click)="dismissNotification(notification)" class="btn btn-danger text-white">dismiss
+                  </button>
+                </div>
+              </li>
+            </ul>
+          </ng-container>
+        </div>
+      </div>
+    </li>
+
+    <li class="nav-item dropdown" dropdown placement="bottom right">
+      <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"
+        dropdownToggle (click)="false">
+        <img src="assets/img/avatars/9.png" class="img-avatar" alt="admin@smartfood.org" />
+      </a>
+      <div class="dropdown-menu dropdown-menu-right" *dropdownMenu aria-labelledby="simple-dropdown">
+        <div class="dropdown-header text-center"><strong>Account</strong></div>
+        <a class="dropdown-item" href="#"><i class="fa fa-tasks"></i> Tasks<span class="badge badge-danger">2</span></a>
+        <div class="dropdown-header text-center"><strong>Settings</strong></div>
+        <a class="dropdown-item" href="#/volunteer/me"><i class="fa fa-user"></i> Profile</a>
+        <a class="dropdown-item" href="#"><i class="fa fa-wrench"></i> Setting</a>
+        <div class="divider"></div>
+        <a class="dropdown-item" href="#"><i class="fa fa-lock"></i> Logout</a>
+      </div>
+    </li>
+  </ul>
+</app-header>
+<div class="app-body">
+  <app-sidebar #appSidebar [fixed]="true" [display]="'lg'" [minimized]="sidebarMinimized"
+    (minimizedChange)="toggleMinimize($event)">
+    <app-sidebar-nav [navItems]="navItems" [perfectScrollbar] [disabled]="appSidebar.minimized"></app-sidebar-nav>
+    <app-sidebar-minimizer></app-sidebar-minimizer>
+  </app-sidebar>
+  <!-- Main content -->
+  <main class="main">
+    <cui-breadcrumb>
+      <li class="breadcrumb-menu d-md-down-none">
+        <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+          <a class="btn" href="#"><i class="icon-speech"></i></a>
+          <a class="btn" href="#"><i class="icon-graph"></i> &nbsp;Dashboard</a>
+          <a class="btn" href="#/volunteer/me"><i class="icon-user"></i> &nbsp;Profile</a>
+        </div>
+      </li>
+    </cui-breadcrumb>
+    <div class="container-fluid">
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+</div>
+<app-footer>
+  <span><a href="https://smartfooddelivery.io">SmartFood</a> &copy; 2021 Ashton Tang</span>
+</app-footer>

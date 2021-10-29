@@ -1,0 +1,33 @@
+.top-space-10 {
+  margin-top: 10px;
+}
+
+.right-space-10 {
+  margin-right: 10px;
+}
+
+.center {
+  text-align: center;
+  width: 100%;
+}
+
+
+.center-60 {
+  text-align: center;
+  width: 60%;
+}
+
+.full-space {
+  width: 100%;
+}
+
+.img {
+  border-radius: 4px;
+  padding: 0px;
+  height: 100px;
+  width: 100px;
+}
+
+.pen {
+  bottom: 0px;
+}
