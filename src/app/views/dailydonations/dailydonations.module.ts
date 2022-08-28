@@ -19,25 +19,24 @@ import { DailyDonationsComponent } from "./dailydonations.component";
 import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    DailyDonationsRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MatDialogModule,
-    MatFormFieldModule,
-    MatSelectModule,
-    MatInputModule,
-    NgbModalModule,
-    FlatpickrModule.forRoot(),
-    CalendarModule.forRoot({
-      provide: DateAdapter,
-      useFactory: adapterFactory,
-    }),
-  ],
-  declarations: [DailyDonationsComponent, AddDailyDonationComponent, CurrentDateFilter],
-  exports: [DailyDonationsComponent, AddDailyDonationComponent, CurrentDateFilter],
-  entryComponents: [MatDialogModule, MatFormFieldModule, MatSelectModule, MatInputModule],
-  providers: [DailyDonationsService, DailyDonationsFakeService],
+    imports: [
+        CommonModule,
+        DailyDonationsRoutingModule,
+        FormsModule,
+        ReactiveFormsModule,
+        MatDialogModule,
+        MatFormFieldModule,
+        MatSelectModule,
+        MatInputModule,
+        NgbModalModule,
+        FlatpickrModule.forRoot(),
+        CalendarModule.forRoot({
+            provide: DateAdapter,
+            useFactory: adapterFactory,
+        }),
+    ],
+    declarations: [DailyDonationsComponent, AddDailyDonationComponent, CurrentDateFilter],
+    exports: [DailyDonationsComponent, AddDailyDonationComponent, CurrentDateFilter],
+    providers: [DailyDonationsService, DailyDonationsFakeService]
 })
 export class DailyDonationsModule {}

@@ -43,38 +43,37 @@ const APP_CONTAINERS = [DefaultLayoutComponent];
 
 
 @NgModule({
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    AppRoutingModule,
-    AppAsideModule,
-    AppBreadcrumbModule.forRoot(),
-    AppFooterModule,
-    AppHeaderModule,
-    AppSidebarModule,
-    PerfectScrollbarModule,
-    BsDropdownModule.forRoot(),
-    TabsModule.forRoot(),
-    ChartsModule,
-    IconModule,
-    IconSetModule.forRoot(),
-    CalendarModule.forRoot({
-      provide: DateAdapter,
-      useFactory: adapterFactory,
-    }),
-    NgbModule,
-    RouterModule,
-    MatDialogModule,
-  ],
-  declarations: [AppComponent, ...APP_CONTAINERS, LoginComponent],
-  providers: [
-    {
-      provide: LocationStrategy,
-      useClass: HashLocationStrategy,
-    },
-    IconSetService,
-  ],
-  entryComponents: [MatDialogModule],
-  bootstrap: [AppComponent],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        AppRoutingModule,
+        AppAsideModule,
+        AppBreadcrumbModule.forRoot(),
+        AppFooterModule,
+        AppHeaderModule,
+        AppSidebarModule,
+        PerfectScrollbarModule,
+        BsDropdownModule.forRoot(),
+        TabsModule.forRoot(),
+        ChartsModule,
+        IconModule,
+        IconSetModule.forRoot(),
+        CalendarModule.forRoot({
+            provide: DateAdapter,
+            useFactory: adapterFactory,
+        }),
+        NgbModule,
+        RouterModule,
+        MatDialogModule,
+    ],
+    declarations: [AppComponent, ...APP_CONTAINERS, LoginComponent],
+    providers: [
+        {
+            provide: LocationStrategy,
+            useClass: HashLocationStrategy,
+        },
+        IconSetService,
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule {}

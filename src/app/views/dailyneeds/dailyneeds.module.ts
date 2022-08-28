@@ -22,33 +22,27 @@ import { VolunteerFakeService } from "../../store/volunteer/volunteer.fake.servi
 import { NotificationFakeService } from "../../store/notification/notification.fake.service";
 
 @NgModule({
-  imports: [
-    CommonModule,
-    DailyNeedsRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MatDialogModule,
-    MatFormFieldModule,
-    MatSelectModule,
-    MatInputModule,
-    NgbModalModule,
-    FlatpickrModule.forRoot(),
-    CalendarModule.forRoot({
-      provide: DateAdapter,
-      useFactory: adapterFactory,
-    }),
-  ],
-  declarations: [DailyNeedsComponent, AddDailyNeedComponent, CurrentDateFilter],
-  exports: [DailyNeedsComponent, AddDailyNeedComponent, CurrentDateFilter],
-  entryComponents: [
-    MatDialogModule,
-    MatFormFieldModule,
-    MatSelectModule,
-    MatInputModule,
-  ],
-  providers: [
-    DailyNeedsService,
-    DailyNeedsFakeService,
-  ],
+    imports: [
+        CommonModule,
+        DailyNeedsRoutingModule,
+        FormsModule,
+        ReactiveFormsModule,
+        MatDialogModule,
+        MatFormFieldModule,
+        MatSelectModule,
+        MatInputModule,
+        NgbModalModule,
+        FlatpickrModule.forRoot(),
+        CalendarModule.forRoot({
+            provide: DateAdapter,
+            useFactory: adapterFactory,
+        }),
+    ],
+    declarations: [DailyNeedsComponent, AddDailyNeedComponent, CurrentDateFilter],
+    exports: [DailyNeedsComponent, AddDailyNeedComponent, CurrentDateFilter],
+    providers: [
+        DailyNeedsService,
+        DailyNeedsFakeService,
+    ]
 })
 export class DailyNeedsModule {}
