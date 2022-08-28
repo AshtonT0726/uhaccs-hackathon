@@ -10,10 +10,6 @@ const routes: Routes = [
     },
     children: [
       {
-        path: '',
-        redirectTo: 'me'
-      },
-      {
         path: 'me',
         component: VolunteerComponent,
         data: {

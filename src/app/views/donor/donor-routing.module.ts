@@ -11,10 +11,6 @@ const routes: Routes = [
     },
     children: [
       {
-        path: '',
-        redirectTo: 'donor'
-      },
-      {
         path: 'donor',
         component: DonorComponent,
         data: {

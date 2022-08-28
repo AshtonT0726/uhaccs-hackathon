@@ -7,18 +7,6 @@ import { LoginComponent } from "./views/login/login.component";
 export const routes: Routes = [
   {
     path: "",
-    redirectTo: "dashboard",
-    pathMatch: "full",
-  },
-  {
-    path: "login",
-    component: LoginComponent,
-    data: {
-      title: "Login Page",
-    },
-  },
-  {
-    path: "",
     component: DefaultLayoutComponent,
     data: {
       title: "Home",
@@ -40,17 +28,17 @@ export const routes: Routes = [
           import("./views/chartjs/chartjs.module").then((m) => m.ChartJSModule),
       },
       {
-        path: "dashboard",
-        loadChildren: () =>
-          import("./views/dashboard/dashboard.module").then(
-            (m) => m.DashboardModule
-          ),
-      },
-      {
         path: "kitchen",
         loadChildren: () =>
           import("./views/kitchen/foodkitchen.module").then(
             (m) => m.FoodKitchenModule
+          ),
+      },
+      {
+        path: "dashboard",
+        loadChildren: () =>
+          import("./views/dashboard/dashboard.module").then(
+            (m) => m.DashboardModule
           ),
       },
       {
@@ -59,6 +47,7 @@ export const routes: Routes = [
           import("./views/dailyneeds/dailyneeds.module").then(
             (m) => m.DailyNeedsModule
           ),
+          pathMatch: 'prefix'
       },
       {
         path: "donor",

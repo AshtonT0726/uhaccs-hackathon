@@ -8,13 +8,9 @@ const routes: Routes = [
   {
     path: '',
     data: {
-      title: 'Food Kitchen'
+      title: 'Kitchen'
     },
     children: [
-      {
-        path: '',
-        redirectTo: 'kitchen'
-      },
       {
         path: 'kitchen',
         component: KitchenComponent,
@@ -28,7 +24,7 @@ const routes: Routes = [
         data: {
           title: 'Group'
         }
-      }
+      },
     ]
   }
 ];

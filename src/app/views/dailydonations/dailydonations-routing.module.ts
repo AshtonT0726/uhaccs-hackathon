@@ -11,10 +11,6 @@ const routes: Routes = [
     },
     children: [
       {
-        path: '',
-        redirectTo: 'calendar'
-      },
-      {
         path: 'calendar',
         component: DailyDonationsComponent,
         data: {
