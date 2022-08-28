@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit, ViewEncapsulation } from "@angular/core";
 import { MAT_DIALOG_DATA, MatDialogRef, MatDialogModule } from "@angular/material/dialog";
-import { FormBuilder, Validators, FormGroup } from "@angular/forms";
+import { UntypedFormBuilder, Validators, FormGroup } from "@angular/forms";
 import {  Kitchen } from "../../core/model/kitchen";
 
 @Component({
@@ -12,7 +12,7 @@ import {  Kitchen } from "../../core/model/kitchen";
 export class AddKitchenComponent implements OnInit {
 
   constructor(
-    private fb: FormBuilder,
+    private fb: UntypedFormBuilder,
     private dialogRef: MatDialogRef<AddKitchenComponent>,
     @Inject(MAT_DIALOG_DATA) public data: Kitchen
   ) {

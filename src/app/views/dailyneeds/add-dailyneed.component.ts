@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit, ViewEncapsulation } from "@angular/core";
 import { MAT_DIALOG_DATA, MatDialogRef, MatDialogModule } from "@angular/material/dialog";
-import { FormBuilder, Validators, FormGroup } from "@angular/forms";
+import { UntypedFormBuilder, Validators, FormGroup } from "@angular/forms";
 import { DailyNeed } from "../../core/model/daily-need";
 
 @Component({
@@ -12,7 +12,7 @@ import { DailyNeed } from "../../core/model/daily-need";
 export class AddDailyNeedComponent implements OnInit {
 
   constructor(
-    private fb: FormBuilder,
+    private fb: UntypedFormBuilder,
     private dialogRef: MatDialogRef<AddDailyNeedComponent>,
     @Inject(MAT_DIALOG_DATA) public data: DailyNeed
   ) {

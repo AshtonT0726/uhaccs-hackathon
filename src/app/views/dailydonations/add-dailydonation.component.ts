@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from "@angular/core";
-import { FormBuilder } from "@angular/forms";
+import { UntypedFormBuilder } from "@angular/forms";
 import {
   MatDialogModule,
   MatDialogRef,
@@ -15,7 +15,7 @@ import { DailyDonation } from "../../core/model/daily-donation";
 })
 export class AddDailyDonationComponent implements OnInit {
   constructor(
-    private fb: FormBuilder,
+    private fb: UntypedFormBuilder,
     private dialogRef: MatDialogRef<AddDailyDonationComponent>,
     @Inject(MAT_DIALOG_DATA) public data: DailyDonation
   ) {
