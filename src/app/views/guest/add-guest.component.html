@@ -1,0 +1,29 @@
+<mat-dialog-content>
+  <div class="row">
+    <div class="col-md-3 mb-1">
+      <mat-label>Name</mat-label>
+    </div>
+    <div class="col-md-8 mb-1">
+      <mat-form-field appearance="fill">
+        <input matInput  placeholder="Ex. John Doe" [(ngModel)]="data.name" />
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3 mb-1">
+      <mat-label>Guest Email</mat-label>
+    </div>
+    <div class="col-md-8 mb-1">
+      <mat-form-field appearance="fill">
+        <input type="email" placeholder="Ex. pat@rutgers.edu" matInput [(ngModel)]="data.email" />
+      </mat-form-field>
+    </div>
+  </div>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button class="mat-raised-button" style="position: relative; left: 4rem;" (click)="close()">Close</button>
+
+  <button class="mat-raised-button bg-primary" style="position: relative; left: 6rem;" (click)="save()">Save</button>
+</mat-dialog-actions>

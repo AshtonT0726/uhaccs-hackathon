@@ -1,22 +1,22 @@
 import { Component, Inject, OnInit, ViewEncapsulation } from "@angular/core";
 import { MAT_DIALOG_DATA, MatDialogRef, MatDialogModule } from "@angular/material/dialog";
 import { UntypedFormBuilder, Validators, FormGroup } from "@angular/forms";
-import { DailyNeed } from "../../core/model/daily-need";
+import {  Guest } from "../../core/model/guest";
 
 @Component({
-  selector: "add-dailyneed",
-  templateUrl: "./add-dailyneed.component.html",
-  styleUrls: ["./add-dailyneed.component.css"],
+  selector: "add-guest",
+  templateUrl: "./add-guest.component.html",
+  styleUrls: ["./add-guest.component.css"],
   providers: [MatDialogModule]
 })
-export class AddDailyNeedComponent implements OnInit {
+export class AddGuestComponent implements OnInit {
 
   constructor(
     private fb: UntypedFormBuilder,
-    private dialogRef: MatDialogRef<AddDailyNeedComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: DailyNeed
+    private dialogRef: MatDialogRef<AddGuestComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: Guest
   ) {
-    console.log("AddDailyNeedComponent", data);
+    console.log("AddGuestComponent", data);
   }
 
   ngOnInit() {}

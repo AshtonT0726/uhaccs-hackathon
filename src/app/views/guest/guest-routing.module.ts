@@ -1,22 +1,22 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { DailyDonationsComponent } from './dailydonations.component';
+import { GuestComponent } from './guest.component';
 
 const routes: Routes = [
   {
     path: '',
     data: {
-      title: 'Daily Donations'
+      title: 'Guest'
     },
     children: [
       {
-        path: 'calendar',
-        component: DailyDonationsComponent,
+        path: 'guest',
+        component: GuestComponent,
         data: {
-          title: 'Calendar'
+          title: 'Guest'
         }
-      }
+      },
     ]
   }
 ];
@@ -25,4 +25,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class DailyDonationsRoutingModule {}
+export class GuestRoutingModule {}

@@ -14,7 +14,7 @@ export const ashton: Guest = {
 
 export const suveer: Guest = {
     "id":  3,
-    "name":  "Suveer Pathur",
+    "name":  "Suveer Puthur",
     "email": "suveer@rutgers.edu",
 };
 

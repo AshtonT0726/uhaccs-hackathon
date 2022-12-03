@@ -28,10 +28,10 @@ export const routes: Routes = [
           import("./views/chartjs/chartjs.module").then((m) => m.ChartJSModule),
       },
       {
-        path: "kitchen",
+        path: "guest",
         loadChildren: () =>
-          import("./views/kitchen/foodkitchen.module").then(
-            (m) => m.FoodKitchenModule
+          import("./views/guest/guest.module").then(
+            (m) => m.GuestModule
           ),
       },
       {
@@ -39,26 +39,6 @@ export const routes: Routes = [
         loadChildren: () =>
           import("./views/dashboard/dashboard.module").then(
             (m) => m.DashboardModule
-          ),
-      },
-      {
-        path: "dailyneeds",
-        loadChildren: () =>
-          import("./views/dailyneeds/dailyneeds.module").then(
-            (m) => m.DailyNeedsModule
-          ),
-          pathMatch: 'prefix'
-      },
-      {
-        path: "donor",
-        loadChildren: () =>
-          import("./views/donor/donor.module").then((m) => m.DonorModule),
-      },
-      {
-        path: "dailydonations",
-        loadChildren: () =>
-          import("./views/dailydonations/dailydonations.module").then(
-            (m) => m.DailyDonationsModule
           ),
       },
       {

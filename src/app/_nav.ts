@@ -8,41 +8,13 @@ export const navItems: INavData[] = [
   },
   {
     title: true,
-    name: "Food Kitchen",
+    name: "My Guests",
   },
   {
-    name: "Kitchen Group",
-    url: "/kitchen/group",
+    name: "Guests",
+    url: "/guest/guest",
     icon: "cil-object-group",
   },
-  {
-    name: "Food Kitchen",
-    url: "/kitchen/kitchen",
-    icon: "cil-restaurant",
-  },
-  {
-    name: "Kitchen Calendar",
-    url: "/dailyneeds/calendar",
-    icon: "cil-calendar",
-  },
-  {
-    title: true,
-    name: "Food Donors",
-  },
-  {
-    name: "Food Donor",
-    url: "/donor/donor",
-    icon: "cil-restaurant",
-  },
-  
-  {
-    name: "Donation Calendar",
-    url: "/dailydonations/calendar",
-    icon: "cil-calendar-check",
-  },
-
-  // add dining calendar after 53
-  // url to /diningcalendar/calendar
   {
     title: true,
     name: "Dining Options",

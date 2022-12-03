@@ -2,23 +2,22 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
-import { KitchenComponent } from './kitchen.component';
-import { GroupComponent } from './group.component';
+import { GuestComponent } from './guest.component';
 
 // Food Kitchen Routing
-import { FoodKitchenRoutingModule } from './foodkitchen-routing.module';
-import { KitchenFakeService } from '../../store/kitchen/kitchen.fake.service';
+import { GuestRoutingModule } from './guest-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
-import { AddKitchenComponent } from './add-kitchen.component';
+import { AddGuestComponent } from './add-guest.component';
+import { GuestFakeService } from '../../store/guest/guest.fake.service';
 
 @NgModule({
   imports: [
     CommonModule,
-    FoodKitchenRoutingModule,
+    GuestRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     MatDialogModule,
@@ -27,15 +26,13 @@ import { AddKitchenComponent } from './add-kitchen.component';
     MatInputModule,
   ],
   declarations: [
-    KitchenComponent,
-    GroupComponent,
-    AddKitchenComponent
+    GuestComponent,
+    AddGuestComponent
   ],
   exports: [
-    KitchenComponent,
-    GroupComponent,
-    AddKitchenComponent
+    GuestComponent,
+    AddGuestComponent
   ],
-  providers: [KitchenFakeService],
+  providers: [GuestFakeService],
 })
-export class FoodKitchenModule { }
+export class GuestModule { }
