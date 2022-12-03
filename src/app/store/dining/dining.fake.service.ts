@@ -1,20 +1,20 @@
 import { Injectable } from "@angular/core";
 import { Observable, of } from "rxjs";
-import { busch } from "../../core/model/dining-hall-constants";
+import { busch, livingston, collegeAvenue, cookDouglass, woodysBusch, kilmersMarket, cafeWest } from "../../core/model/dining-hall-constants";
 import { DiningHall } from "../../core/model/dining-hall";
 
-@Injectable( {
+@Injectable({
   providedIn: 'root'
 })
 export class DiningFakeServices {
   diningHalls: DiningHall[] = this.createDiningHalls();
 
-  currentId : number = 101;
+  currentId: number = 101;
 
-  constructor() {}
+  constructor() { }
 
   createDiningHalls(): DiningHall[] {
-    this.diningHalls = [busch];
+    this.diningHalls = [busch, livingston, collegeAvenue, cookDouglass, woodysBusch, kilmersMarket, cafeWest];
     return this.diningHalls;
   }
 
@@ -22,7 +22,7 @@ export class DiningFakeServices {
     return of(this.diningHalls);
   }
 
-  createDiningHall( diningHallToAdd: DiningHall): Observable<DiningHall> {
+  createDiningHall(diningHallToAdd: DiningHall): Observable<DiningHall> {
     diningHallToAdd.id = this.currentId;
     this.currentId += 1;
     this.diningHalls.push(diningHallToAdd);

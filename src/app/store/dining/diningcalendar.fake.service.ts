@@ -26,27 +26,22 @@ export class DiningDonationsFakeService {
     let dd: HostDonation[] = [];
     dd.push({
       hostId: 1,
-      diningDonations: this.createAllDiningDonation(10000, true),
+      diningDonations: this.createAllDiningDonation(10000),
     });
     return dd;
   }
 
-  createAllDiningDonation(seedId: number,  bakeryOnly: boolean): DiningDonation[] {
+  createAllDiningDonation(seedId: number): DiningDonation[] {
     let donations: DiningDonation[] = [];
 
     for (let i = 1; i <= 31; i++) {
       
     
-      let r: number = this.getRandom(3);
-      if (r > 1 || bakeryOnly) {
+      let r: number = this.getRandom(10);
+      if (r >= 9) {
         donations.push(this.fakeDiningDonation(seedId, i, 1, "Busch", "Breakfast"));
-        donations.push(this.fakeDiningDonation(seedId, i, 4, "Livingston", "Lunch"));
-      } else if (r <=2 && !bakeryOnly) {
+      } else if (r >= 8) {
         donations.push(this.fakeDiningDonation(seedId, i, 2, "Livingston", "Dinner"));
-        donations.push(this.fakeDiningDonation(seedId, i, 3, "College Ave", "Lunch"));
-      }
-      if (this.getRandom(3) > 1 && !bakeryOnly) {
-        donations.push(this.fakeDiningDonation(seedId, i, 5, "College Ave", "Breakfast"));
       }
     }
     return donations;
