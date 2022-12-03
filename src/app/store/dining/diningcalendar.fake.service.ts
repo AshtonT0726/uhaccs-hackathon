@@ -14,7 +14,7 @@ import {
   providedIn: 'root'
 })
 export class DiningDonationsFakeService {
-  hostDonation: HostDonation[] = this.createHostDonation();
+  hostDonation : HostDonation = this.createHostDonation();
 
   currentId: number = 60001;
 
@@ -22,12 +22,8 @@ export class DiningDonationsFakeService {
 
   constructor() {}
 
-  createHostDonation(): HostDonation[] {
-    let dd: HostDonation[] = [];
-    dd.push({
-      hostId: 1,
-      diningDonations: this.createAllDiningDonation(10000),
-    });
+  createHostDonation(): HostDonation {
+    let dd: HostDonation = { hostId: 1, diningDonations : this.createAllDiningDonation(10000)};
     return dd;
   }
 
@@ -47,18 +43,12 @@ export class DiningDonationsFakeService {
     return donations;
   }
 
-  getHostDiningDonations(hostId: number): DiningDonation[] {
-    let dd: DiningDonation[];
-    this.hostDonation.forEach((kd) => {
-      if (kd.hostId === hostId) {
-        dd = kd.diningDonations;
-      }
-    });
-    return dd;
+  getHostDiningDonations(): DiningDonation[] {
+    return this.hostDonation.diningDonations;
   }
 
-  getDiningDonation(hostId: number, id: number): Observable<DiningDonation[]> {
-    let dd: DiningDonation[] = this.getHostDiningDonations(hostId);
+  getDiningDonation(id: number): Observable<DiningDonation[]> {
+    let dd: DiningDonation[] = this.getHostDiningDonations();
     let data = new Observable<DiningDonation[]>((observer) => {
       setTimeout(() => {
         observer.next(dd.filter((i) => i.id == id));
@@ -67,12 +57,11 @@ export class DiningDonationsFakeService {
     return data;
   }
 
-  getByHostIdAndDate(
-    hostId: number,
+  getByDate(
     date: string
   ): Observable<DiningDonation[]> {
-    console.log("getByDonorIdAndDate", hostId, date);
-    let dd: DiningDonation[] = this.getHostDiningDonations(hostId);
+    console.log("getByDate", date);
+    let dd: DiningDonation[] = this.getHostDiningDonations();
     let data = new Observable<DiningDonation[]>((observer) => {
       setTimeout(() => {
         observer.next(dd.filter((i) => i.date == date));
@@ -81,12 +70,11 @@ export class DiningDonationsFakeService {
     return data;
   }
 
-  getByHostIdAndMonth(
-    hostId: number,
+  getByMonth(
     date: string
   ): Observable<DiningDonation[]> {
-    console.log("getByDonorIdAndMonth", hostId, date);
-    let dd: DiningDonation[] = this.getHostDiningDonations(hostId);
+    console.log("getByMonth", date);
+    let dd: DiningDonation[] = this.getHostDiningDonations();
     let data = new Observable<DiningDonation[]>((observer) => {
       setTimeout(() => {
         observer.next(dd);
@@ -95,8 +83,8 @@ export class DiningDonationsFakeService {
     return data;
   }
 
-  getStatusByHostIdAndDate(hostId: number, date: string): Observable<string> {
-    console.log("getStatusByHostIdAndDate", hostId, date);
+  getStatusByDate(date: string): Observable<string> {
+    console.log("getStatusByDate", date);
     let data = new Observable<string>((observer) => {
       setTimeout(() => {
         if (this.getCurrentDateStr() >= date) {
@@ -110,19 +98,18 @@ export class DiningDonationsFakeService {
   }
 
   createDiningDonation(
-    hostId: number,
     diningDonation: DiningDonation
   ): Observable<DiningDonation> {
     diningDonation.id = this.currentId;
     diningDonation.color = mealToColor[diningDonation.meal];
     this.currentId += 1;
-    this.getHostDiningDonations(hostId).push(diningDonation);
+    this.getHostDiningDonations().push(diningDonation);
     console.log("fake service created ", diningDonation);
     return of(diningDonation);
   }
 
-  deleteDiningDonation(hostId: number, id: number): Observable<any> {
-    let dd: DiningDonation[] = this.getHostDiningDonations(hostId);
+  deleteDiningDonation(id: number): Observable<any> {
+    let dd: DiningDonation[] = this.getHostDiningDonations();
     dd.forEach((element, index) => {
       if (element.id === id) delete dd[index];
     });
@@ -130,10 +117,9 @@ export class DiningDonationsFakeService {
   }
 
   updateDiningDonation(
-    donorId: number,
     diningDonation: DiningDonation
   ): Observable<DiningDonation> {
-    let dd: DiningDonation[] = this.getHostDiningDonations(donorId);
+    let dd: DiningDonation[] = this.getHostDiningDonations();
     dd.forEach((element, index) => {
       if (element.id === diningDonation.id) delete dd[index];
     });

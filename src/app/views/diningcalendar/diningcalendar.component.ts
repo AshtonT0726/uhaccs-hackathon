@@ -100,8 +100,7 @@ export class DiningCalendarComponent implements OnInit {
 
   ngOnInit() {
     console.log("ngOnInit");
-    this.diningDonations = this.diningDonationService.getByHostIdAndDate(
-      this.selectedHostId,
+    this.diningDonations = this.diningDonationService.getByDate(
       "any"
     );
     this.diningDonations.subscribe((donations) => {
@@ -121,8 +120,7 @@ export class DiningCalendarComponent implements OnInit {
       // TODO fix name
         this.selectedDate = String(params.get("date"));
       // TODO fix any.
-      this.diningDonations = this.diningDonationService.getByHostIdAndMonth(
-        this.selectedHostId,
+      this.diningDonations = this.diningDonationService.getByMonth(
         "any"
       );
       this.diningDonations.subscribe((donations) => {
@@ -145,8 +143,7 @@ export class DiningCalendarComponent implements OnInit {
   refresh() {
     console.log("refresh");
 
-    this.diningDonations = this.diningDonationService.getByHostIdAndMonth(
-      this.selectedHostId,
+    this.diningDonations = this.diningDonationService.getByMonth(
       "any"
     );
     this.diningDonations.subscribe((donations) => {
@@ -264,13 +261,12 @@ export class DiningCalendarComponent implements OnInit {
 
   addDonation(donationToAdd: DiningDonation) {
     // Hardcode pantry Id as 1.
-    this.diningDonationService.createDiningDonation(1, donationToAdd);
+    this.diningDonationService.createDiningDonation(donationToAdd);
     this.refresh();
   }
 
   deleteDonation(donationToDelete: DiningDonation) {
     this.diningDonationService.deleteDiningDonation(
-      this.selectedHostId,
       donationToDelete.id
     );
     this.refresh();
@@ -279,7 +275,6 @@ export class DiningCalendarComponent implements OnInit {
   updateDonation(donationToUpdate: DiningDonation) {
     console.log("update ", donationToUpdate);
     this.diningDonationService.updateDiningDonation(
-      this.selectedHostId,
       donationToUpdate
     );
     this.refresh();
@@ -300,7 +295,7 @@ export class DiningCalendarComponent implements OnInit {
 
   isCompleted() {
     this.diningDonationService
-      .getStatusByHostIdAndDate(1, this.getViewDateStr())
+      .getStatusByDate(this.getViewDateStr())
       .subscribe((s) => {
         console.log("s", s);
         return (this.donationComplete = s === "Completed");

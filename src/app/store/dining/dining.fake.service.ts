@@ -15,6 +15,7 @@ export class DiningFakeServices {
 
   createDiningHalls(): DiningHall[] {
     this.diningHalls = [busch, livingston, collegeAvenue, cookDouglass, woodysBusch, kilmersMarket, cafeWest];
+    console.log("create dining halls");
     return this.diningHalls;
   }
 

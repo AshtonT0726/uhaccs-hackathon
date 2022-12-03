@@ -3,4 +3,5 @@ export class DiningHall {
   public name: string;
   public address: string;
   public campus: string;
+  public menuLink: string;
 }

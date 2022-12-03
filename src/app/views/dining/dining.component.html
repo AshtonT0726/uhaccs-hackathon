@@ -11,9 +11,11 @@
             <div class="h5 text-primary mb-0 mt-2">{{diningHall.name}}</div>
             <div class="text-muted text-uppercase font-weight-bold font-xs">{{diningHall.campus}}</div>
           </div>
-  
+
           <div class="card-body p-3 clearfix">
             <div><small class="text-muted">{{diningHall.address}}</small></div>
+            <div><small class="text-muted"><a href="{{diningHall.menuLink}}" target="_blank">Click for Menu</a>
+              </small></div>
             <div class="progress progress-xs my-3">
               <div class="progress-bar bg-primary" role="progressbar" style="width: 25%" aria-valuenow="25"
                 aria-valuemin="0" aria-valuemax="100" *ngIf="i%4 === 0"></div>
@@ -27,16 +29,16 @@
             <div class="col-0 top-space-10">
               <button type="button " class="btn btn-ghost-primary" *ngIf="i%4 === 0" (click)="onDiningHall(diningHall)">
                 Show Availability...
-                </button>
+              </button>
               <button type="button" class="btn btn-ghost-success" *ngIf="i%4 === 1" (click)="onDiningHall(diningHall)">
                 Show Availability...
               </button>
               <button type="button" class="btn btn-ghost-danger" *ngIf="i%4 === 2" (click)="onDiningHall(diningHall)">
                 Show Availability...
-                </button>
+              </button>
               <button type="button" class="btn btn-ghost-warning" *ngIf="i%4 === 3" (click)="onDiningHall(diningHall)">
                 Show Availability...
-                </button>
+              </button>
             </div>
 
           </div>
