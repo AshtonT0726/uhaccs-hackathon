@@ -23,15 +23,12 @@ import {
 } from "date-fns";
 import { Observable } from "rxjs";
 import { colors } from "../../core/model/constants";
-import { DailyDonation } from "../../core/model/daily-donation";
-import { DailyDonationsFakeService } from "../../store/donations/dailydonations.fake.service";
 import { MatDialog, MatDialogConfig } from "@angular/material/dialog";
 import { AddDiningCalendarComponent } from "./add-diningcalendar.component";
 //import { ThrowStmt } from "@angular/compiler";
-import { panera } from "../../core/model/donor-constants";
 import { ActivatedRoute } from "@angular/router";
+import { ashton } from "../../core/model/guest-constants"
 import { DiningDonation } from "../../core/model/dining-donation";
-import { DiningFakeServices } from "../../store/dining/dining.fake.service";
 import { DiningDonationsFakeService } from "../../store/dining/diningcalendar.fake.service";
 
 @Component({
@@ -54,7 +51,7 @@ export class DiningCalendarComponent implements OnInit {
   donationComplete: Boolean;
 
   // TODO: Fix name
-  selectedHostName: string = panera.name;
+  selectedHostName: string = ashton.name;
   selectedHostId: number = 1;
   selectedDate: string;
 
@@ -119,7 +116,7 @@ export class DiningCalendarComponent implements OnInit {
         : 1;
       this.selectedHostName = String(params.get("name"));
       if (this.selectedHostName === 'null') {
-        this.selectedHostName = panera.name;
+        this.selectedHostName = ashton.name;
       }
       // TODO fix name
         this.selectedDate = String(params.get("date"));

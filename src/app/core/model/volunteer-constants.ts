@@ -1,4 +1,3 @@
-import { Donor } from "./donor";
 import { ayush } from "./guest-constants";
 import { busch } from "./dining-hall-constants";
 import { Volunteer } from "./volunteer";

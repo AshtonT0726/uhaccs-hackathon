@@ -1,7 +1,7 @@
 import { DatePipe } from "@angular/common";
 import { Host, Injectable } from "@angular/core";
 import { Observable, of } from "rxjs";
-import { categoryToColor, mealToColor } from "../../core/model/constants";
+import {  mealToColor } from "../../core/model/constants";
 import { DiningDonation, HostDonation } from "../../core/model/dining-donation";
 import {
   busch,

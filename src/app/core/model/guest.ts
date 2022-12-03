@@ -1,4 +1,3 @@
-import { DailyDonation } from "./daily-donation";
 
 export class Guest {
     public id: number;

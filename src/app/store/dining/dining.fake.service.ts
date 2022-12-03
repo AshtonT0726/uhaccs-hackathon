@@ -1,6 +1,5 @@
 import { Injectable } from "@angular/core";
 import { Observable, of } from "rxjs";
-import { Donor } from "../../core/model/donor";
 import { busch } from "../../core/model/dining-hall-constants";
 import { DiningHall } from "../../core/model/dining-hall";
 

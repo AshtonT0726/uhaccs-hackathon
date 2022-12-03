@@ -21,13 +21,6 @@ export const colors = {
   },
 };
 
-export const categoryToColor = {
-  "Hot Meal": colors.red,
-  Bakery: colors.yellow,
-  Fruits: colors.green,
-  Sandwich: colors.purple,
-  Soup: colors.blue,
-};
 
 export const mealToColor = {
   Breakfast: colors.yellow,

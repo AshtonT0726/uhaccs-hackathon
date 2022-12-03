@@ -18,27 +18,15 @@ export class VolunteerComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onKitchen(event: DonationEvent) {
-    console.log("onKitchen", event);
+  onGuest(event: DonationEvent) {
+    console.log("onGuest", event);
     this.router.navigate([
       "../dailyneeds/calendar",
       {
-        name: event.kitchen.name,
-        id: event.kitchen.id,
+        name: event.guest.name,
+        id: event.guest.id,
         date: event.date
       },
     ]);
   }
-
-  onDonor(event: DonationEvent) {
-    console.log("onDonor", event);
-    this.router.navigate([
-      "../dailydonations/calendar",
-      {
-        name: event.donor.name,
-        id: event.donor.id,
-        date: event.date
-      },
-    ]);
-  }  
 }
