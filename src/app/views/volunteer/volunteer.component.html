@@ -28,7 +28,7 @@
           <div class="col-md-3">
             <div class="card text-primary">
               <div class="card-header">
-                <h6>Volunteer for 1 year and 2 months</h6>
+                <h6>Host for 1 year and 2 months</h6>
               </div>
             </div>
           </div>
@@ -51,9 +51,10 @@
             </div>
           </div>
           <div class="col-md-10">
-            <small class="h4 mb-1 text-muted text-uppercase">{{volunteer.eventsAttended}} </small>
+            <!-- needs to change to meals hosted -->
+            <small class="h4 mb-1 text-muted text-uppercase">{{volunteer.mealsHosted}} </small>
             <br>
-            <small class="h8 mb-1 text-muted text-uppercase">EVENTS ATTENDED</small>
+            <small class="h8 mb-1 text-muted text-uppercase">MEALS HOSTED</small>
           </div>
         </div>
       </div>
@@ -69,27 +70,10 @@
             </div>
           </div>
           <div class="col-md-10">
-            <small class="h4 mb-1 text-muted text-uppercase">{{volunteer.milesRun}} </small>
+            <!-- needs to change to number of guests -->
+            <small class="h4 mb-1 text-muted text-uppercase">{{volunteer.numberGuests}} </small>
             <br>
-            <small class="h8 mb-1 text-muted text-uppercase">Miles Travelled</small>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-2">
-    <div class="card">
-      <div class="card-body">
-        <div class="row">
-          <div class="col-md-2">
-            <div class="h2 right-space-10">
-              <i class="text-warning cil-loop"></i>
-            </div>
-          </div>
-          <div class="col-md-10">
-            <small class="h4 mb-1 text-muted text-uppercase">{{volunteer.rescheduled}} </small>
-            <br>
-            <small class="h8 mb-1 text-muted text-uppercase">Donations Rerouted</small>
+            <small class="h8 mb-1 text-muted text-uppercase">No. OF GUESTS</small>
           </div>
         </div>
       </div>
@@ -105,27 +89,10 @@
             </div>
           </div>
           <div class="col-md-10">
-            <small class="h4 mb-1 text-muted text-uppercase">{{volunteer.foodInPound}} </small>
+            <!-- needs to change to money saved -->
+            <small class="h4 mb-1 text-muted text-uppercase">${{volunteer.moneySaved}} </small>
             <br>
-            <small class="h8 mb-1 text-muted text-uppercase">Pounds Saved</small>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-2">
-    <div class="card">
-      <div class="card-body">
-        <div class="row">
-          <div class="col-md-2">
-            <div class="h2 right-space-10">
-              <i class="text-success cil-restaurant"></i>
-            </div>
-          </div>
-          <div class="col-md-10">
-            <small class="h4 mb-1 text-muted text-uppercase">{{volunteer.foodInMeals}} </small>
-            <br>
-            <small class="h8 mb-1 text-muted text-uppercase">Meals Served</small>
+            <small class="h8 mb-1 text-muted text-uppercase">MONEY SAVED</small>
           </div>
         </div>
       </div>
@@ -156,14 +123,14 @@
             <div class="col-md-8 center">
               <div class="row">
                 <button type="button" class="btn btn-ghost-primary center"
-                  (click)="onDonor(event)">{{event.donor.name}}</button>
+                  (click)="onDonor(event)">{{event.diningHall.name}}</button>
               </div>
               <div class="row">
                 <small class="h6 center text-primary">--></small>
               </div>
               <div class="row">
                 <button type="button" class="btn btn-ghost-primary center"
-                  (click)="onKitchen(event)">{{event.kitchen.name}}</button>
+                  (click)="onKitchen(event)">{{event.guest.name}}</button>
               </div>
             </div>
             <!--/.col-->
@@ -196,14 +163,14 @@
             <div class="col-md-8 center">
               <div class="row">
                 <button type="button" class="btn btn-ghost-info center"
-                  (click)="onDonor(event)">{{event.donor.name}}</button>
+                  (click)="onDonor(event)">{{event.diningHall.name}}</button>
               </div>
               <div class="row">
                 <small class="h6 center text-info">--></small>
               </div>
               <div class="row">
                 <button type="button" class="btn btn-ghost-info center"
-                  (click)="onKitchen(event)">{{event.kitchen.name}}</button>
+                  (click)="onKitchen(event)">{{event.guest.name}}</button>
               </div>
             </div>
             <!--/.col-->

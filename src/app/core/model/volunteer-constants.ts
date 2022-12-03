@@ -1,18 +1,18 @@
 import { Donor } from "./donor";
-import { emmas, panera, pratoBay } from "./donor-constants";
-import { houseOfFaith, stLucys } from "./kitchen-constants";
+import { ayush } from "./guest-constants";
+import { busch } from "./dining-hall-constants";
 import { Volunteer } from "./volunteer";
 
 export const me: Volunteer = {
   id: 1,
   name: "Ashton Tang",
-  location: "Historic Downtown",
-  email: "ashton.tang@gmail.com",
+  location: "Busch Campus",
+  email: "ashton@rutgers.edu",
   phone: "201-555-6789",
-  eventsAttended: 110,
-  milesRun: 870,
+  mealsHosted: 8,
+  numberGuests: 3,
   rescheduled: 12,
-  foodInPound: 4010,
+  moneySaved: 120,
   foodInMeals: 3450,
   pastEvents: [
     {
@@ -21,8 +21,8 @@ export const me: Volunteer = {
       dd: 2,
       month: "October",
       day: "Saturday",
-      donor: emmas,
-      kitchen: houseOfFaith,
+      diningHall: busch,
+      guest: ayush,
     },
     {
       id: 2002,
@@ -30,8 +30,8 @@ export const me: Volunteer = {
       dd: 9,
       month: "October",
       day: "Saturday",
-      donor: panera,
-      kitchen: stLucys,
+      diningHall: busch,
+      guest: ayush,
     },
     {
       id: 2003,
@@ -39,8 +39,8 @@ export const me: Volunteer = {
       dd: 16,
       month: "October",
       day: "Saturday",
-      donor: panera,
-      kitchen: stLucys,
+      diningHall: busch,
+      guest: ayush,
     },
     {
       id: 2004,
@@ -48,8 +48,8 @@ export const me: Volunteer = {
       dd: 17,
       month: "October",
       day: "Sunday",
-      donor: pratoBay,
-      kitchen: stLucys,
+      diningHall: busch,
+      guest: ayush,
     },
   ],
   upcomingEvents: [
@@ -59,8 +59,8 @@ export const me: Volunteer = {
       dd: 27,
       month: "October",
       day: "Wednesday",
-      donor: panera,
-      kitchen: stLucys,
+      diningHall: busch,
+      guest: ayush,
     },
     {
       id: 2102,
@@ -68,17 +68,8 @@ export const me: Volunteer = {
       dd: 5,
       month: "November",
       day: "Friday",
-      donor: panera,
-      kitchen: stLucys,
-    },
-    {
-      id: 2103,
-      date: "2021-11-06",
-      dd: 6,
-      month: "November",
-      day: "Saturday",
-      donor: pratoBay,
-      kitchen: stLucys,
+      diningHall: busch,
+      guest: ayush,
     },
   ],
 };

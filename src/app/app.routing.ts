@@ -62,6 +62,11 @@ export const routes: Routes = [
           ),
       },
       {
+        path: "dining",
+        loadChildren: () =>
+          import("./views/dining/dining.module").then((m) => m.DiningModule),
+      },
+      {
         path: "volunteer",
         loadChildren: () =>
           import("./views/volunteer/volunteer.module").then(

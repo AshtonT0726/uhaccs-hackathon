@@ -6,10 +6,10 @@ export class Volunteer {
     public location: string;
     public email: string;
     public phone: string;
-    public eventsAttended: number;
-    public milesRun: number;
+    public mealsHosted: number;
+    public numberGuests: number;
     public rescheduled: number;
-    public foodInPound: number;
+    public moneySaved: number;
     public foodInMeals: number;
     public pastEvents: DonationEvent[];
     public upcomingEvents: DonationEvent[];

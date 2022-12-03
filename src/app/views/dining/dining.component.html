@@ -1,0 +1,53 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <ng-container *ngFor="let diningHall of asyncDiningHalls | async; let i = index">
+      <div class="col-sm-6 col-lg-3">
+        <div class="card">
+          <div class="card-body p-3 clearfix">
+            <i class="fa cil-fastfood bg-primary p-3 font-2xl mr-3 float-left" *ngIf="i%4 === 0"></i>
+            <i class="fa cil-fastfood bg-success p-3 font-2xl mr-3 float-left" *ngIf="i%4 === 1"></i>
+            <i class="fa cil-fastfood bg-danger p-3 font-2xl mr-3 float-left" *ngIf="i%4 === 2"></i>
+            <i class="fa cil-fastfood bg-warning p-3 font-2xl mr-3 float-left" *ngIf="i%4 === 3"></i>
+            <div class="h5 text-primary mb-0 mt-2">{{diningHall.name}}</div>
+            <div class="text-muted text-uppercase font-weight-bold font-xs">{{diningHall.location}}</div>
+          </div>
+  
+          <div class="card-body p-3 clearfix">
+            <div><small class="text-muted">{{diningHall.address}}</small></div>
+            <div class="progress progress-xs my-3">
+              <div class="progress-bar bg-primary" role="progressbar" style="width: 25%" aria-valuenow="25"
+                aria-valuemin="0" aria-valuemax="100" *ngIf="i%4 === 0"></div>
+              <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25"
+                aria-valuemin="0" aria-valuemax="100" *ngIf="i%4 === 1"></div>
+              <div class="progress-bar bg-danger" role="progressbar" style="width: 25%" aria-valuenow="25"
+                aria-valuemin="0" aria-valuemax="100" *ngIf="i%4 === 2"></div>
+              <div class="progress-bar bg-warning" role="progressbar" style="width: 25%" aria-valuenow="25"
+                aria-valuemin="0" aria-valuemax="100" *ngIf="i%4 === 3"></div>
+            </div>
+            <div class="col-0 top-space-10">
+              <button type="button " class="btn btn-ghost-primary" *ngIf="i%4 === 0" (click)="onDiningHall(diningHall)">
+                Show Availability...
+                </button>
+              <button type="button" class="btn btn-ghost-success" *ngIf="i%4 === 1" (click)="onDiningHall(diningHall)">
+                Show Availability...
+              </button>
+              <button type="button" class="btn btn-ghost-danger" *ngIf="i%4 === 2" (click)="onDiningHall(diningHall)">
+                Show Availability...
+                </button>
+              <button type="button" class="btn btn-ghost-warning" *ngIf="i%4 === 3" (click)="onDiningHall(diningHall)">
+                Show Availability...
+                </button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <!--/.col-->
+    </ng-container>
+  </div>
+  <!--/.row-->
+</div>
+
+<button class="btn btn-primary float-left" (click)="addDiningDialog()">
+  Add new Dining Hall
+</button>

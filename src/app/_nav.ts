@@ -34,10 +34,20 @@ export const navItems: INavData[] = [
     url: "/donor/donor",
     icon: "cil-restaurant",
   },
+  
   {
     name: "Donation Calendar",
     url: "/dailydonations/calendar",
     icon: "cil-calendar-check",
+  },
+  {
+    title: true,
+    name: "Dining Options",
+  },
+  {
+    name: "Dining Locations",
+    url: "/dining/dining",
+    icon: "cil-restaurant",
   },
   {
     title: true,
