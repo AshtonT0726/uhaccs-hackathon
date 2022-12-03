@@ -28,5 +28,13 @@ export const cookDouglass: DiningHall = {
   campus: "Cook/Douglass Campus"
 };
 
+
+export const woodysBusch: DiningHall = {
+  id: 4,
+  name: "Woody's Cafe",
+  address: "177 Ryders Ln.",
+  campus: "Busch Campus"
+};
+
 // TBD: Add more dining halls
 
