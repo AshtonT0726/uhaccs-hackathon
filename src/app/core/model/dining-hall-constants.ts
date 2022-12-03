@@ -32,9 +32,25 @@ export const cookDouglass: DiningHall = {
 export const woodysBusch: DiningHall = {
   id: 4,
   name: "Woody's Cafe",
-  address: "177 Ryders Ln.",
+  address: "675 Hoes Ln.",
   campus: "Busch Campus"
 };
+
+
+export const cafeWest: DiningHall = {
+  id: 4,
+  name: "Cafe West",
+  address: "15 Seminary Pl.",
+  campus: "College Avenue Campus"
+};
+
+export const kilmersMarket : DiningHall = {
+  id: 4,
+  name: "Kilmer's Market",
+  address: "83 Rockafeller Rd",
+  campus: "Livingston Campus"
+};
+
 
 // TBD: Add more dining halls
 
