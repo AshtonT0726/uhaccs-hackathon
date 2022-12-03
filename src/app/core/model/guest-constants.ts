@@ -55,3 +55,9 @@ export const jack: Guest = {
     "email": "Jack@rutgers.edu",
 };
 
+export const david: Guest = {
+    "id":  10,
+    "name":  "David Blacke",
+    "email": "David@rutgers.edu",
+};
+
