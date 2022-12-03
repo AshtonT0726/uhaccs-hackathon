@@ -29,6 +29,12 @@ export const categoryToColor = {
   Soup: colors.blue,
 };
 
+export const mealToColor = {
+  Breakfast: colors.yellow,
+  Lunch: colors.green,
+  Dinner: colors.purple,
+};
+
 export const endpoint = "http://localhost:8080/api/v1/";
 
 export const url = (path: string): string => JSON.stringify({ endpoint, path });

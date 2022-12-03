@@ -67,6 +67,11 @@ export const routes: Routes = [
           import("./views/dining/dining.module").then((m) => m.DiningModule),
       },
       {
+        path: "diningcalendar",
+        loadChildren: () =>
+        import("./views/diningcalendar/diningcalendar.module").then((m) => m.DiningCalendarModule),
+      },
+      {
         path: "volunteer",
         loadChildren: () =>
           import("./views/volunteer/volunteer.module").then(

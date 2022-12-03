@@ -40,6 +40,9 @@ export const navItems: INavData[] = [
     url: "/dailydonations/calendar",
     icon: "cil-calendar-check",
   },
+
+  // add dining calendar after 53
+  // url to /diningcalendar/calendar
   {
     title: true,
     name: "Dining Options",
@@ -48,6 +51,11 @@ export const navItems: INavData[] = [
     name: "Dining Locations",
     url: "/dining/dining",
     icon: "cil-restaurant",
+  },
+  {
+    name: "Dining Calendar",
+    url: "/diningcalendar/calendar",
+    icon: "cil-calendar-check",
   },
   {
     title: true,
