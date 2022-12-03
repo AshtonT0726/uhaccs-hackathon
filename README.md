@@ -9,3 +9,4 @@ The volunteer profile page displays the volunteer's email, picture, and statisti
 
 The most important and distinctive feature of the system is its capability to automatically reroute food donations from one kitchen to another within a group.  Because the system has information on the required item and quantity for each kitchen, the food donation item and quantity for each donor, it can dynamically compute which kitchen is most suited for receiving the food donation.  If there are any changes to the food delivery schedule, volunteers will be notified as soon as possible so that they can ensure that the most in needy kitchens receives the food donation.
 
+# uhaccs-hackathon
