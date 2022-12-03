@@ -8,9 +8,7 @@ export class Volunteer {
     public phone: string;
     public mealsHosted: number;
     public numberGuests: number;
-    public rescheduled: number;
     public moneySaved: number;
-    public foodInMeals: number;
     public pastEvents: DonationEvent[];
     public upcomingEvents: DonationEvent[];
 }

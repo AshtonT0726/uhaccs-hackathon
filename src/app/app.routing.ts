@@ -35,13 +35,6 @@ export const routes: Routes = [
           ),
       },
       {
-        path: "dashboard",
-        loadChildren: () =>
-          import("./views/dashboard/dashboard.module").then(
-            (m) => m.DashboardModule
-          ),
-      },
-      {
         path: "dining",
         loadChildren: () =>
           import("./views/dining/dining.module").then((m) => m.DiningModule),
