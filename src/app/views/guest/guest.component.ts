@@ -41,11 +41,11 @@ export class GuestComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe((result: Guest) => {
-      this.addGuest(result);
+      this.guestService.createGuest(result);
     });
   }
 
   addGuest(guestToAdd: Guest) {
-    this.guestService.createGuest(guestToAdd);
+   
   }
 }
